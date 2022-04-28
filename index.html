@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo with ES Shims</title>
+
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.5.4/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "@hotwired/stimulus": "https://production.haystack-assets.com/assets/stimulus.min-9b384be54c17a3e60445cbf6c69405a08cfc269e.js",
+        "@hotwired/stimulus-loading": "https://production.haystack-assets.com/assets/stimulus-loading-52891e8bf90c80c6909d46c07ada873cd846920b.js",
+        "controllers/hello_controller": "./controllers/hello_controller.js",
+        "controllers/bye_controller": "./controllers/bye_controller.js"
+      }
+     }
+
+    </script>
+    <link rel="modulepreload"
+          href="https://production.haystack-assets.com/assets/stimulus.min-9b384be54c17a3e60445cbf6c69405a08cfc269e.js"
+          nonce="b7a8de5908dfabeb1da1d56b9df4f6b510b9f190">
+    <link rel="modulepreload"
+          href="https://production.haystack-assets.com/assets/stimulus-loading-52891e8bf90c80c6909d46c07ada873cd846920b.js"
+          nonce="b7a8de5908dfabeb1da1d56b9df4f6b510b9f190">
+
+    <script src="application.js" type="module"></script>
+</head>
+<body>
+    <div data-controller="hello">
+        <input data-hello-target="name" type="text">
+        <button data-action="click->hello#greet">Greet</button>
+    </div>
+    <div data-controller="bye">
+        <input data-bye-target="name" type="text">
+        <button data-action="click->bye#greet">Greet</button>
+    </div>
+</body>
+</html>
